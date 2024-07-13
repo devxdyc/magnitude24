@@ -11,12 +11,12 @@ export async function Event({ category }: { category: any }) {
   console.log(events);
 
   return (
-    <div className="flex m-10 ">
+    <div className="flex m-2 md:m-10 flex-col md:flex-row ">
       {events &&
         events.map((e) => (
           <a href={`/events/${e.id}`}>
             <div
-              className="felx m-2 gap-2  rounded-xl  max-w-[300px]  bg-muted  shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg outline-none"
+              className="felx m-2 gap-2  rounded-xl  md:max-w-[300px] md:min-w-[10vw] sm:max-w-[70vw] sm:min-w-[60vw] bg-muted  shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg outline-none"
               key={e.name}
             >
               <Image
