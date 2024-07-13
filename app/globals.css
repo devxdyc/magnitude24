@@ -46,3 +46,7 @@
     --ring: 0 72.2% 50.6%;
   }
 }
+
+body {
+  background-color: #00070b; /* Change #f7fafc to your preferred background color */
+}

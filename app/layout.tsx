@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={josefinSans.className}>
       <body className=" bg-background text-foreground">
-        <div className=" w-full bg-background text-foreground bg-dot-white/[0.2]  relative  ">
+        <div className=" w-full bg-black text-white bg-dot-white/[0.2]  relative  ">
           {/* Radial gradient for the container to give a faded look */}
-          <div className="absolute pointer-events-none inset-0 flex items-center bg-background text-foreground [mask-image:radial-gradient(ellipse_at_center,transparent_90%,white)]"></div>
+          <div className="absolute pointer-events-none inset-0 flex items-center bg-black text-white [mask-image:radial-gradient(ellipse_at_center,transparent_90%,white)]"></div>
 
           <main className="min-h-screen flex flex-col items-center ">
             <Header />
