@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import NextLogo from "./NextLogo";
 import SupabaseLogo from "./SupabaseLogo";
@@ -11,39 +12,52 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { ArrowDownLeftSquare, ArrowUpRight } from "lucide";
+import ExternalLinkButton from "./animita/nsv-button";
+import GetStartedButton from "./animita/reg-now-btn";
 
 export default function Header() {
   return (
-    <div className="flex justify-between items-center z-22   px-8 gap-16 pt-2 w-full p-2  mb-3  border border-white/20 border-b border-gray-300">
+    <div className=" mt-3 flex justify-around items-center z-22 top-3 bg-transparent    px-8 gap-16 pt-2  p-2  left-0 w-full z-50">
       <a href="/" rel="noreferrer">
-        <Image src="/image.png" alt="logo" width={150} height={150} />
+        <Image src="/image.png" alt="logo" width={150} height={50} />
       </a>
-      <div className="flex gap-4">
+      <div className="flex  text-md gap-4">
         <nav className=" hidden  md:flex gap-4 ">
-          <ul className="flex gap-4">
+          <ul className="flex gap-7">
             <li>
-              <a href="/" rel="noreferrer">
-                <h2>home</h2>
+              <a
+                href="/"
+                rel="noreferrer"
+                className="flex justify-center font-sm align-middle rounded-md overflow-hidden"
+              >
+                <ExternalLinkButton text="Home" />
+              </a>
+            </li>
+            <li>
+              <a href="/about">
+                <ExternalLinkButton text="About" />
               </a>
             </li>
             <li>
               <a href="/events" rel="noreferrer">
-                <h2>events</h2>
-              </a>
-            </li>
-            <li>
-              <a href="/faqs">
-                <h2>faqs</h2>
+                {/* <h2>events</h2> */}
+                <ExternalLinkButton text="Events" />
               </a>
             </li>
             <li>
               <a href="/team">
-                <h2>team</h2>
+                <ExternalLinkButton text="Team" />
               </a>
             </li>
             <li>
               <a href="/sponcers">
-                <h2>sponcers</h2>
+                <ExternalLinkButton text="Sponcers" />
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                <ExternalLinkButton text="Contact" />
               </a>
             </li>
           </ul>
@@ -57,31 +71,37 @@ export default function Header() {
               <MenubarContent>
                 <MenubarItem>
                   <a href="/" rel="noreferrer">
-                    <h2>home</h2>
+                    <h2>Home</h2>
+                  </a>
+                </MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem>
+                  <a href="/about">
+                    <h2>About</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>
                   <a href="/events" rel="noreferrer">
-                    <h2>events</h2>
-                  </a>
-                </MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>
-                  <a href="/faqs">
-                    <h2>faqs</h2>
+                    <h2>Events</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>
                   <a href="/team">
-                    <h2>team</h2>
+                    <h2>Team</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>
                   <a href="/sponcers">
-                    <h2>sponcers</h2>
+                    <h2>Sponcers</h2>
+                  </a>
+                </MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem>
+                  <a href="/contact">
+                    <h2>contact</h2>
                   </a>
                 </MenubarItem>
               </MenubarContent>
@@ -89,6 +109,12 @@ export default function Header() {
           </Menubar>
         </nav>
       </div>
+
+      {/* <div className="flex gap-4 rounded-lg overflow-hidden"> */}
+      <a href="/events">
+        <GetStartedButton text="Register Now" />
+      </a>
+      {/* </div> */}
     </div>
   );
 }
