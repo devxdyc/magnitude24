@@ -23,7 +23,7 @@ export default function Header() {
         <Image src="/image.png" alt="logo" width={150} height={50} />
       </a>
       <div className="flex  text-md gap-4">
-        <nav className=" hidden  md:flex gap-4 ">
+        <nav className=" hidden  lg:flex gap-4 ">
           <ul className="flex gap-7">
             <li>
               <a
@@ -62,7 +62,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <nav className="md:hidden">
+        <nav className="lg:hidden">
           <Menubar className="border-0">
             <MenubarMenu>
               <MenubarTrigger>
@@ -111,7 +111,7 @@ export default function Header() {
       </div>
 
       {/* <div className="flex gap-4 rounded-lg overflow-hidden"> */}
-      <a href="/events">
+      <a href="/events" className="hidden md:block">
         <GetStartedButton text="Register Now" />
       </a>
       {/* </div> */}

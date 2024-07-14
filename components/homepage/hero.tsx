@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 function Hero() {
   return (
-    <motion.div className="lg:w-[60%] flex flex-col items-center">
+    <motion.div className="lg:w-[60%] p-5 flex flex-col items-center">
       <motion.h1
-        className="text-[35px] w-[80%] z-1   m-4"
+        className="md:text-[35px] w-[80%] z-1   m-4 mb-8 text-center "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
