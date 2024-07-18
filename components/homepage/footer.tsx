@@ -37,7 +37,7 @@ function Footer() {
               <Input placeholder="Enter your email" className="rounded-xl " />
             </div>
             <div className="flex  items-center  p-4 justify-center">
-              <Image src="/Image.png" alt="logo" width={150} height={50} />
+              <Image src="/image.png" alt="logo" width={150} height={50} />
             </div>
           </div>
           <hr className="border-t-1 mt-2 mb-2 border-slate-500" />
