@@ -21,16 +21,13 @@ function useParallax(value: MotionValue<number>, distance: number) {
 
 function Footer() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 150);
-
   return (
     <div ref={ref} className="flex justify-center">
       {
         <motion.footer
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          style={{ y: y, width: "100%" }}
+          style={{ width: "100%" }}
           className=" bg-slate-900/40 text-white pb-8 rounded-t-[50px]"
         >
           <div className="container flex-col-reverse md:flex-row flex w-full md:justify-around justify-between p-10 mx-auto ">
