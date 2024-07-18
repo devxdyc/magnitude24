@@ -8,7 +8,7 @@ export default function Events({ e }: { e: any }) {
       className="rounded-xl overflow-hidden w-fit"
       href={`/events/${e.id}`}
       initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      animate={{ scale: 1, boxShadow: "0px 0px 50px 2px rgba(100,10,10,0.9)" }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       whileHover={{
         scale: 1.05,
@@ -16,7 +16,7 @@ export default function Events({ e }: { e: any }) {
       }}
     >
       <div
-        className="felx m-2 gap-2  w-fit rounded-xl   bg-muted  shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg outline-none"
+        className="felx m-2 gap-2  w-fit rounded-xl   shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg outline-none"
         key={e.name}
       >
         <Image
