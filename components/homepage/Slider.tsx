@@ -54,7 +54,7 @@ function Slider({ events }: { events: any }) {
   return (
     <div>
       <motion.div
-        className=" p-5 flex flex-col  items-center overflow-hidden h-[100vh]  "
+        className=" p-5 flex flex-col  items-center overflow-hidden md:h-[70vh] justify-center lg:h-[100vh]  "
         onHoverStart={() => setIsHovering(true)}
         onHoverEnd={() => setIsHovering(false)}
       >

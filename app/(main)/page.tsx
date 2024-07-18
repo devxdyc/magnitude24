@@ -9,6 +9,7 @@ import {
 import { SparklesPreview } from "@/components/sparkelsPreview";
 import Hero from "@/components/homepage/hero";
 import Slider from "@/components/homepage/Slider";
+import Timeline from "@/components/homepage/timeline";
 
 export default async function Index() {
   const supabase = createClient();
@@ -24,6 +25,7 @@ export default async function Index() {
 
       {/* <SparklesPreview /> */}
       {EVENTS && <Slider events={EVENTS} />}
+      <Timeline />
     </div>
   );
 }
