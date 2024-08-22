@@ -91,8 +91,8 @@ export default function Timeline() {
   });
 
   return (
-    <div className="w-full m-8 flex flex-col items-center justify-center">
-      <h1 className="text-4xl">Our History</h1>
+    <div className="w-full m-10 flex flex-col items-center justify-center">
+      <h1 className="text-6xl text-primary">Our History</h1>
       {details.map((detail, index) => (
         <Image key={index} detail={detail} />
       ))}

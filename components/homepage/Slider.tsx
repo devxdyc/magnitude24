@@ -54,11 +54,13 @@ function Slider({ events }: { events: any }) {
   return (
     <div>
       <motion.div
-        className=" p-5 flex flex-col  items-center overflow-hidden md:h-[70vh] justify-center lg:h-[100vh]  "
+        className=" p-5 flex flex-col mt-10  items-center overflow-hidden md:h-[70vh] justify-center lg:h-[100vh]  "
         onHoverStart={() => setIsHovering(true)}
         onHoverEnd={() => setIsHovering(false)}
       >
-        <span className="m-5 text-4xl ">Featured Events</span>
+        <span className="m-15 text-6xl  text-primary p-10 ">
+          Featured Events
+        </span>
         {/* //   <motion.img
             //     initial={{ opacity: 0, y: -1 }}
             //     animate={{ opacity: 1, y: 0 }}
@@ -123,13 +125,10 @@ function Slider({ events }: { events: any }) {
           )}
           {/* ))} */}
           <div className="absolute inset-0 z-50 flex justify-between items-center ">
-            <div
-              className="p-2 bg-slate-600 rounded-2xl"
-              onClick={handlePrevious}
-            >
+            <div className="p-2  rounded-2xl" onClick={handlePrevious}>
               <ChevronLeft />
             </div>
-            <div className="p-2 bg-slate-600 rounded-2xl" onClick={handleNext}>
+            <div className="p-2  rounded-2xl" onClick={handleNext}>
               <ChevronRight />
             </div>
           </div>

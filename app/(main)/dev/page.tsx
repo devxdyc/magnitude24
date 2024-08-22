@@ -22,7 +22,7 @@ const FormSchema = z.object({
     message: "name must be at least 2 characters.",
   }),
   registrationNumber: z
-    .number()
+    .string()
     .min(8, { message: "registration number must be at least 8 characters" })
     .max(8, { message: "registration number must be at most 8 characters" }),
   course: z
@@ -46,7 +46,7 @@ export default function InputForm() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: "",
-      registrationNumber: 0,
+      registrationNumber: "",
       course: "",
       dateOfBirth: "",
       contactNumber: 0,
