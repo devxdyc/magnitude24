@@ -10,8 +10,6 @@ async function page() {
       <h1 className="text-3xl my-7">Meet the team😁🐕</h1>
       <div className=" lg:max-w-[80%] flex items-center justify-center gap-9 flex-wrap">
         {team && team.map((team: any) => <Card team={team} />)}
-        {team && team.map((team: any) => <Card team={team} />)}
-        {team && team.map((team: any) => <Card team={team} />)}
       </div>
     </div>
   );
