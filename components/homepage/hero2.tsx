@@ -21,6 +21,7 @@ export function HeroScroll() {
           src="https://xfdopvchbkvknriiippu.supabase.co/storage/v1/object/public/publicBucket/Untitled_design.mp4?t=2024-07-13T19%3A46%3A05.367Z"
           autoPlay
           loop
+          playsInline
           muted
           className="w-[100%] z-10  object-cover blur-sm "
         />
