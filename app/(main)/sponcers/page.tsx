@@ -9,8 +9,9 @@ async function page() {
 
   console.log(sponcers);
   return (
-    <div>
-      <div className="flex flex-wrap gap-6  justify-center">
+    <div className="flex flex-col justify-center w-full ">
+      <h1 className="text-3xl my-7 text-center">Our Sponcers</h1>
+      <div className="flex flex-wrap gap-10 p-10 lg:px-64 align-middle justify-center">
         {sponcers &&
           sponcers.map((sponcers) => (
             <div className="flex flex-col bg-muted rounded-xl p-3 items-center justify-center">
