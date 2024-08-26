@@ -29,14 +29,14 @@ function Footer() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           style={{ width: "100%" }}
-          className=" bg-[url('/wave2.png')] bg-cover flex  flex-col bg-bottom bg-h bg-no-repeat h-[80vh] text-white pb-8 rounded-t-[50px] justify-between"
+          className=" bg-[url('/wave2.png')] bg-cover flex  flex-col bg-bottom  bg-no-repeat h-fit  md:h-[80vh]  text-white pb-8 rounded-t-[50px] justify-between"
         >
-          <div className="text-center flex flex-col justify-center gap-6">
+          <div className="text-center flex flex-col justify-center gap-6 mb-5">
             <div className="text-center flex flex-col justify-center gap-4">
-              <h1 className="  text-6xl font-semibold">
+              <h1 className=" text-3xl  md:text-6xl font-semibold">
                 Magni<span className="text-primary">tude</span>
               </h1>
-              <h1 className="text-lg ">
+              <h1 className=" text-md md:text-lg ">
                 Lovely Professional University's Open InterUniversity Compition.
               </h1>
             </div>

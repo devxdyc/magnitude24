@@ -11,7 +11,9 @@ export function HeroScroll() {
       <ContainerScroll
         titleComponent={
           <div className="flex flex-col items-center gap-3">
-            <h1 className="text-4xl font-semibold text-white">Welcome to</h1>
+            <h1 className="md:text-4xl text-2xl font-semibold text-white">
+              Welcome to
+            </h1>
             <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
               {" "}
               Magni<span className="text-primary">tude 24</span>

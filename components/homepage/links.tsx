@@ -8,12 +8,12 @@ import {
 
 export function AnimatedPin() {
   return (
-    <div className="h-[40rem] w-full flex flex-wrap items-center justify-center ">
+    <div className="min-h-[40rem] w-full flex flex-wrap items-center gap-2 justify-center ">
       <PinContainer
         title="/instagram.com/youthvibe.lpu"
         href="https://www.instagram.com/youthvibe.lpu/"
       >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] md:w-[20rem] h-[15rem] md:h-[20rem]  ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
             Instagram
           </h3>
@@ -27,7 +27,7 @@ export function AnimatedPin() {
         title="/instagram.com/youthvibe.lpu"
         href="https://www.instagram.com/youthvibe.lpu/"
       >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] md:w-[20rem] h-[15rem] md:h-[20rem]  ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold flex  text-base text-slate-100">
             Youtube
           </h3>
@@ -41,7 +41,7 @@ export function AnimatedPin() {
         title="/instagram.com/youthvibe.lpu"
         href="https://www.instagram.com/youthvibe.lpu/"
       >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[15rem] md:w-[20rem] h-[15rem] md:h-[20rem]  ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
             Facebook
           </h3>
