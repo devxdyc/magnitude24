@@ -199,7 +199,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-[100vh] z-50 overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -240,7 +240,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-neutral-900 h-80 w-56 md:h-[35rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">

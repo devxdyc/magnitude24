@@ -22,7 +22,7 @@ export function AppleCardsCarouselDemo({ events }: { events: any }) {
   return (
     <div className="w-full h-full py-20">
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
-        Our Fetured Events
+        Our Flagship Events
       </h2>
       <Carousel items={cards} />
     </div>

@@ -15,6 +15,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { FacebookIcon } from "lucide-react";
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
@@ -28,46 +29,69 @@ function Footer() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           style={{ width: "100%" }}
-          className=" bg-slate-900/40 text-white pb-8 rounded-t-[50px]"
+          className=" bg-[url('/wave2.png')] bg-cover flex  flex-col bg-bottom bg-h bg-no-repeat h-[80vh] text-white pb-8 rounded-t-[50px] justify-between"
         >
-          <div className="container flex-col-reverse md:flex-row flex w-full md:justify-around justify-between p-10 mx-auto ">
-            <div className="lg:w-[60%] flex flex-col  gap-3">
-              <span className="text-primary sm:text-xs">Get Updates</span>
-              <h1 className="md:text-3xl text-sm">Provide Us Your email</h1>
-              <Input placeholder="Enter your email" className="rounded-xl " />
+          <div className="text-center flex flex-col justify-center gap-6">
+            <div className="text-center flex flex-col justify-center gap-4">
+              <h1 className="  text-6xl font-semibold">
+                Magni<span className="text-primary">tude</span>
+              </h1>
+              <h1 className="text-lg ">
+                Lovely Professional University's Open InterUniversity Compition.
+              </h1>
             </div>
-            <div className="flex  items-center  p-4 justify-center">
-              <Image src="/image.png" alt="logo" width={150} height={50} />
+            <a>
+              <button className="bg-primary/90 p-2 rounded-xl font-semibold text-xl px-4 ">
+                Contact Us
+              </button>
+            </a>
+            <div className="flex justify-center gap-4 p-5">
+              <a>
+                <button>
+                  <InstagramLogoIcon className="w-8 h-8" />
+                </button>
+              </a>
+              <a>
+                <button>
+                  <TwitterLogoIcon className="w-8 h-8" />
+                </button>
+              </a>
+              <a>
+                <button>
+                  <LinkedInLogoIcon className="w-8 h-8" />
+                </button>
+              </a>
+              <a>
+                <button>
+                  <FacebookIcon className="w-8 h-8" />
+                </button>
+              </a>
             </div>
           </div>
-          <hr className="border-t-1 mt-2 mb-2 border-slate-500" />
-          <div className="flex w-full justify-around pb-4">
-            <div>
-              <ul className="hidden md:flex flex-col gap-1 ">
-                <li>Home</li>
-                <li>About</li>
-                <li>Events</li>
-                <li>Sponcers</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-1">
-                <li>Terms and Condition</li>
-                <li>Privacy Policy</li>
-                <li>Cookie Policy</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h1 className="font-bold text-primary">Let's connect</h1>
-              <span>youthvibe@gmail.com</span>
-              <div className="flex gap-4 ">
-                <InstagramLogoIcon />
-                <TwitterLogoIcon />
-                <LinkedInLogoIcon />
-                <InstagramLogoIcon />
-              </div>
-            </div>
+          <div className=" justify-self-end flex flex-col gap-4">
+            <ul className="flex  justify-around  text-foreground font-bold">
+              <li>
+                <a>Home</a>
+              </li>
+              <li>
+                <a>About</a>
+              </li>
+              <li>
+                <a>Events</a>
+              </li>
+              <li>
+                <a>Sponcors</a>
+              </li>
+              <li>
+                <a>Team</a>
+              </li>
+              <li>
+                <a>Contact</a>
+              </li>
+            </ul>
+            <h1 className="text-center">
+              &copy;2024 Magnitude 24. All rights reserved.
+            </h1>
           </div>
         </motion.footer>
       }

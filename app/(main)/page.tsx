@@ -33,7 +33,7 @@ export default async function Index() {
       {EVENTS && <AppleCardsCarouselDemo events={EVENTS} />}
       <div className="w-full h-full py-20">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
-          Our Past Performances
+          Our Former Resplendent Galas
         </h2>
 
         <LayoutPerformances />

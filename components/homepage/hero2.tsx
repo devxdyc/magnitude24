@@ -2,17 +2,25 @@
 import React from "react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import Image from "next/image";
+import CountdownTimer from "./Countdown";
 
 export function HeroScroll() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col items-center align-middle overflow-hidden pt-20">
+      {/* <CountdownTimer /> */}
       <ContainerScroll
         titleComponent={
-          <div className="flex flex-col">
-            <h1 className="text-4xl font-semibold text-white">Wellcome to</h1>
+          <div className="flex flex-col items-center gap-3">
+            <h1 className="text-4xl font-semibold text-white">Welcome to</h1>
             <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
               {" "}
               Magni<span className="text-primary">tude 24</span>
+              {/* <Image
+                src={"/logo/magnitude-text-2.png"}
+                width={900}
+                height={200}
+                alt="logo"
+              /> */}
             </span>
           </div>
         }
@@ -23,7 +31,7 @@ export function HeroScroll() {
           loop
           playsInline
           muted
-          className="w-[100%] z-10  object-cover blur-sm "
+          className="w-[100%] z-10   object-cover blur-sm "
         />
       </ContainerScroll>
     </div>

@@ -24,7 +24,7 @@ function page() {
           />
           <Textarea
             className="rounded-xl"
-            placeholder="Go ahead we are listening...."
+            placeholder="Share your thoughts...."
           />
         </div>
         <button className="bg-primary text-primary-foreground flex justify-center  rounded-xl p-2 font-semibold text-xl  ">
