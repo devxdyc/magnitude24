@@ -8,7 +8,7 @@ export default function Events({ e }: { e: any }) {
       className="rounded-xl overflow-hidden w-fit"
       href={`/events/${e.id}`}
       initial={{ scale: 0 }}
-      animate={{ scale: 1, boxShadow: "0px 0px 50px 2px rgba(100,10,10,0.9)" }}
+      animate={{ scale: 1, boxShadow: "0px 0px 50px 2px rgba(10,10,10,1)" }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       whileHover={{
         scale: 1.05,
@@ -20,9 +20,9 @@ export default function Events({ e }: { e: any }) {
         key={e.name}
       >
         <Image
-          src={e.banner_url && `${e.banner_url}`}
+          src={e.banner_url && `${e.square_url}`}
           alt={e.name}
-          width={300}
+          width={250}
           height={250}
         />
         <div className="flex flex-col ml-3 p-2 w-fit">

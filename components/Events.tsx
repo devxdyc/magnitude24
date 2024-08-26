@@ -17,9 +17,6 @@ export async function Event({ category }: { category: any }) {
         events.map((e) => (
           <>
             <Events e={e} />
-            <Events e={e} />
-            <Events e={e} />
-            <Events e={e} />
           </>
           // <a href={`/events/${e.id}`}>
           //   <div

@@ -89,9 +89,9 @@ const cards = [
   },
   {
     id: 4,
-    content: <SkeletonThree />,
+    content: <SkeletonFour />,
     className: "col-span-1",
-    thumbnail: "/kartik.jpg",
+    thumbnail: "/aseskaur.jpg",
   },
 
   {

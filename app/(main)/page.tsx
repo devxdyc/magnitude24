@@ -13,6 +13,7 @@ import Timeline from "@/components/homepage/timeline";
 import { AppleCardsCarouselDemo } from "@/components/homepage/Crosal";
 import { HeroScroll } from "@/components/homepage/hero2";
 import { LayoutPerformances } from "@/components/homepage/PastPerformances";
+import { AnimatedPin } from "@/components/homepage/links";
 
 export default async function Index() {
   const supabase = createClient();
@@ -36,6 +37,13 @@ export default async function Index() {
         </h2>
 
         <LayoutPerformances />
+      </div>
+      <div className="w-full h-full py-20">
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
+          Our Socials
+        </h2>
+
+        <AnimatedPin />
       </div>
       {/* <Timeline /> */}
     </div>
