@@ -10,8 +10,8 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        "Welcome to{" "}
-        <span className="text-primary font-semibold">Youthvibe 24</span>: The
+        "Welcome to MAGNI
+        <span className="text-primary font-semibold">TUDE 24</span>: The
         Ultimate Cultural Showdown of Universities!"
       </motion.h1>
       <motion.video
