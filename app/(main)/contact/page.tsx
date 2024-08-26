@@ -31,8 +31,8 @@ function page() {
           submit
         </button>
       </div>
-      <div className="hidden md:flex flex-col  justify-around gap-2 p-5">
-        <Image src="/Magnitude.png" alt="dyc-logo" width={200} height={200} />
+      <div className="hidden md:flex flex-col  justify-around gap-4 p-5">
+        <Image src="/logo/dyc.jpg" alt="dyc-logo" width={200} height={200} />
         <div className="flex gap-3 flex-col">
           <div className="flex gap-2">
             <MapPin />

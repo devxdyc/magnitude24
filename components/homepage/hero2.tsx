@@ -6,7 +6,7 @@ import CountdownTimer from "./Countdown";
 
 export function HeroScroll() {
   return (
-    <div className="flex flex-col items-center align-middle overflow-hidden pt-20">
+    <div className="flex flex-col items-center align-middle pt-20">
       {/* <CountdownTimer /> */}
       <ContainerScroll
         titleComponent={
@@ -16,7 +16,7 @@ export function HeroScroll() {
             </h1>
             <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
               {" "}
-              Magni<span className="text-primary">tude 24</span>
+              MAGNI<span className="text-primary">TUDE 24</span>
               {/* <Image
                 src={"/logo/magnitude-text-2.png"}
                 width={900}

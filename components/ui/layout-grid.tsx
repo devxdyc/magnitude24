@@ -67,7 +67,7 @@ const ImageComponent = ({ card }: { card: Card }) => {
       height="400"
       width="400"
       className={cn(
-        "object-cover object-top absolute inset-0 h-[400px] w-full transition duration-200"
+        "object-cover object-center  absolute inset-0 h-[400px] w-full transition duration-200"
       )}
       alt="thumbnail"
     />

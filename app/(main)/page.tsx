@@ -25,9 +25,13 @@ export default async function Index() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-2 items-center mb-8  ">
-      {/* <Hero /> */}
+      <div className="flex md:hidden">
+        <Hero />
+      </div>
 
-      <HeroScroll />
+      <div className="hidden md:flex">
+        <HeroScroll />
+      </div>
       {/* <SparklesPreview /> */}
       {/* {EVENTS && <Slider events={EVENTS} />} */}
       {EVENTS && <AppleCardsCarouselDemo events={EVENTS} />}

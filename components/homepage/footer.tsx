@@ -69,26 +69,6 @@ function Footer() {
             </div>
           </div>
           <div className=" justify-self-end flex flex-col gap-4">
-            <ul className="flex  justify-around  text-foreground font-bold">
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
-                <a>Events</a>
-              </li>
-              <li>
-                <a>Sponcors</a>
-              </li>
-              <li>
-                <a>Team</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-            </ul>
             <h1 className="text-center">
               &copy;2024 Magnitude 24. All rights reserved.
             </h1>

@@ -20,8 +20,8 @@ export default function Header() {
   return (
     <div className=" mt-3 flex justify-around items-center z-22 top-3 bg-transparent    px-8 gap-16 pt-2  p-2  left-0 w-full z-50">
       <a href="/" rel="noreferrer">
-        <h1 className="text-4xl font-bold">
-          Magni<span className="text-primary">tude</span>
+        <h1 className="text-2xl md:text-4xl font-bold">
+          MAGNI<span className="text-primary">TUDE</span>
         </h1>
       </a>
       <div className="flex  text-md gap-4">
@@ -114,7 +114,8 @@ export default function Header() {
 
       {/* <div className="flex gap-4 rounded-lg overflow-hidden"> */}
       <a href="/events" className="hidden md:block">
-        <GetStartedButton text="Register Now" />
+        {/* <GetStartedButton text="Register Now" /> */}
+        <Image src={"/logo/dyc.jpg"} alt="dyc-logo" width={100} height={100} />
       </a>
       {/* </div> */}
     </div>

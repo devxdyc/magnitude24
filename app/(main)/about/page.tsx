@@ -1,10 +1,12 @@
+import { TimelineMag } from "@/components/extras/timeline";
 import Timeline from "@/components/homepage/timeline";
 import React from "react";
 
 function page() {
   return (
     <div>
-      <Timeline />
+      {/* <Timeline /> */}
+      <TimelineMag />
     </div>
   );
 }
