@@ -56,7 +56,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <span className="ml-2">{events[0].venue}</span>
             </div>
             <div>
-              <a href={`/events/register/${events[0].id}`}>
+              <a
+                href={`/events/register/${events[0].id}?name=${events[0].name}`}
+              >
                 <Button className="bg-primary rounded-2xl text-primary-foreground  ">
                   Register Now
                 </Button>

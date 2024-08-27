@@ -7,6 +7,7 @@ import { Urbanist } from "next/font/google";
 import { HeroHighlight } from "@/components/ui/hero-higlight";
 import Footer from "@/components/homepage/footer";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { Toaster } from "@/components/ui/toaster";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Footer />
           {/* </div> */}
         </BackgroundBeamsWithCollision>
+        <Toaster />
       </body>
     </html>
   );
