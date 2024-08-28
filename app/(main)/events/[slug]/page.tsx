@@ -30,13 +30,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="md:w-[800px] md:h-[380px] m-4 overflow-hidden">
           <Image
-            src={events[0].banner_url && `${events[0].banner_url}`}
+            src={events[0].banner_url && `${events[0].square_url}`}
             alt={events[0].name}
             // layout="fill"
             width={800}
             height={280}
             objectFit="cover"
-            className="rounded-lg shadow-lg bg-cover overflow-hidden"
+            className="rounded-lg object-center shadow-lg bg-cover overflow-hidden"
           />
         </div>
         <div className="bg-muted p-1 m-2 rounded-xl">

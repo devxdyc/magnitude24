@@ -37,6 +37,7 @@ export const PinContainer = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       href={href || "/"}
+      target="blank"
     >
       <div
         style={{
