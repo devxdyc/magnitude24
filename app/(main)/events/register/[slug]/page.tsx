@@ -3,15 +3,13 @@ import React from "react";
 import { Label } from "@/components/extras/label";
 import { Input } from "@/components/extras/input";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
+import dynamic from "next/dynamic";
 import { z } from "zod";
+
 import { createClient } from "@/utils/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 import { useSearchParams } from "next/navigation";
+import sendMail from "@/lib/mail";
 
 export default function RegistrationForm({
   params,
@@ -69,6 +67,13 @@ export default function RegistrationForm({
         description: "Enter valid data",
       });
     } else {
+      await sendMail({
+        to: email,
+        name: name,
+        subject: "Registration successful",
+        html: `<h1>Registration successful</h1><p>Thank you for registering for ${eventname}</p>`,
+      });
+
       toast({
         title: "Success",
         description: "Data inserted successfully",

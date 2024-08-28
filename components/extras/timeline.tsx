@@ -8,8 +8,12 @@ export function TimelineMag() {
       title: "2024",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Exited to launch Magnitude 24 an intrauniversity open fest.
+          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+            Get ready for the biggest intra-university event of the year!
+            Magnitude 2024 is just around the corner, and the excitement is
+            palpable. Set for September, this year's edition promises an
+            unforgettable experience, packed with fun and creativity. Don’t miss
+            out on the action!
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -45,19 +49,21 @@ export function TimelineMag() {
       ),
     },
     {
-      title: "Early 2023",
+      title: "2023",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            quidem inventore quasi quae ad tempore deleniti repellendus itaque
-            velit aliquam.
+          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+            Last year, Magnitude 2023 took us on a thrilling journey with its
+            electrifying Halloween theme. The event was a massive hit, leaving
+            participants and spectators with memories of spooky costumes,
+            creative decorations, and an atmosphere full of energy and
+            excitement.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            quod, inventore tempora blanditiis eius debitis. Perferendis amet
-            dolores veniam repellendus ducimus? Accusamus ratione vero
-            similique!
+          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+            The sensational Sunidhi Chauhan and Rashmeet Kaur also treated us to
+            an unforgettable concert, they brought the house down with their
+            incredible performances. It was a night of vibrant vibes and pure
+            excitement.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -93,13 +99,19 @@ export function TimelineMag() {
       ),
     },
     {
-      title: "Changelog",
+      title: "2022",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            something to write here
+          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-4">
+            The 2022 edition of Magnitude was truly special, celebrating
+            cultural diversity in the most vibrant way. The event brought
+            together students from different backgrounds, showcasing their
+            unique traditions and talents. The highlight of the evening was a
+            mesmerizing performance by Asees Kaur, whose soulful voice
+            captivated the audience. It was a beautiful blend of cultures and
+            music, making it one of the best Magnitude events to date.
           </p>
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
               ✅ abcdefghijklmnopqrstuvwxyz
             </div>
@@ -115,7 +127,7 @@ export function TimelineMag() {
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
               ✅ Salman Bhai is good driver
             </div>
-          </div>
+          </div> */}
           <div className="grid grid-cols-2 gap-4">
             <Image
               src="https://picsum.photos/500/500"
