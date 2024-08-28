@@ -3,7 +3,7 @@ import "../globals.css";
 import { SparklesPreview } from "@/components/main";
 import { url } from "inspector";
 import Header from "@/components/Header";
-import { Urbanist } from "next/font/google";
+import { Urbanist, Fruktur } from "next/font/google";
 import { HeroHighlight } from "@/components/ui/hero-higlight";
 import Footer from "@/components/homepage/footer";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={UrbanistF.className}>
+    <html lang="en" className={"black-han-sans-regular "}>
       <body className=" bg-black text-foreground">
         {/* <div className=" w-full bg-black text-white bg-dot-white/[0.2]  relative  "> */}
         {/* Radial gradient for the container to give a faded look */}

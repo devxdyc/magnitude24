@@ -46,7 +46,7 @@ function Footer() {
               </button>
             </a>
             <div className="flex justify-center gap-4 p-5">
-              <a>
+              <a href="https://www.instagram.com/youthvibe.lpu/">
                 <button>
                   <InstagramLogoIcon className="w-8 h-8" />
                 </button>

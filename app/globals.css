@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
 @layer base {
   :root {
     --background: 0 0% 0;
@@ -28,4 +29,16 @@
 
 body {
   background-color: #000000; /* Change #f7fafc to your preferred background color */
+}
+
+.black-han-sans-regular {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.black-han-sans-regular {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
