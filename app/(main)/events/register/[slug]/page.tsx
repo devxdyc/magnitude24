@@ -142,7 +142,7 @@ export default function RegistrationForm({
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-8">
-            <Label htmlFor="hostler">Cource</Label>
+            <Label htmlFor="hostler">Course</Label>
             <Input
               id="hostler"
               placeholder=""
