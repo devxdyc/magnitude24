@@ -53,8 +53,8 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="/sponcers">
-                <ExternalLinkButton text="Sponcers" />
+              <a href="/sponsors">
+                <ExternalLinkButton text="Sponsors" />
               </a>
             </li>
             <li>
@@ -96,8 +96,8 @@ export default function Header() {
                 </MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>
-                  <a href="/sponcers">
-                    <h2>Sponcers</h2>
+                  <a href="/sponcors">
+                    <h2>Sponcors</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />

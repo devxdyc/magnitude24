@@ -14,7 +14,7 @@ const SkeletonOne = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        sunidhi chauhan
+        Sunidhi Chauhan
       </p>
       {/* <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
@@ -27,7 +27,7 @@ const SkeletonOne = () => {
 const SkeletonOne1 = () => {
   return (
     <div>
-      <p className="font-bold md:text-4xl text-xl text-white">rashmeetkaur</p>
+      <p className="font-bold md:text-4xl text-xl text-white">Rashmeet Kaur</p>
       {/* <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
         A serene and tranquil retreat, this house in the woods offers a peaceful
@@ -40,7 +40,9 @@ const SkeletonOne1 = () => {
 const SkeletonTwo = () => {
   return (
     <div>
-      <p className="font-bold md:text-4xl text-xl text-white">Bassi</p>
+      <p className="font-bold md:text-4xl text-xl text-white">
+        Anubhav Singh Bassi
+      </p>
       {/* <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
         Perched high above the world, this house offers breathtaking views and a
