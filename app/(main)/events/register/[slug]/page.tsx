@@ -31,6 +31,7 @@ export default function RegistrationForm({
   const [hostler, setHostler] = React.useState("");
   const [cource, setcource] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
 
   // const formSchema = z.object({
   //   name: z.string().nonempty("Name is required"),
@@ -73,6 +74,7 @@ export default function RegistrationForm({
         subject: "Registration successful",
         html: `<h1>Registration successful</h1><p>Thank you for registering for ${eventname}</p>`,
       });
+      setSubmitted(true);
 
       toast({
         title: "Success",
@@ -82,90 +84,99 @@ export default function RegistrationForm({
     setSubmitting(false);
   };
 
-  return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
-      <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
-        Register for {eventname}
-      </h2>
+  if (submitted) {
+    return (
+      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
+        <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
+          Thank you for registering for {eventname}
+        </h2>
+      </div>
+    );
+  } else {
+    return (
+      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
+        <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
+          Register for {eventname}
+        </h2>
 
-      <form className="my-8" onSubmit={handleSubmit}>
-        <LabelInputContainer>
-          <Label htmlFor="firstname">Name</Label>
-          <Input
-            id="firstname"
-            placeholder="Tyler"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="regnumber">Registration Number</Label>
-          <Input
-            id="regnumber"
-            placeholder=""
-            type="text"
-            value={regnumber}
-            onChange={(e) => setRegnumber(e.target.value)}
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input
-            id="email"
-            placeholder="projectmayhem@fc.com"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </LabelInputContainer>
+        <form className="my-8" onSubmit={handleSubmit}>
+          <LabelInputContainer>
+            <Label htmlFor="firstname">Name</Label>
+            <Input
+              id="firstname"
+              placeholder="Tyler"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="regnumber">Registration Number</Label>
+            <Input
+              id="regnumber"
+              placeholder=""
+              type="text"
+              value={regnumber}
+              onChange={(e) => setRegnumber(e.target.value)}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </LabelInputContainer>
 
-        <LabelInputContainer className="mb-8">
-          <Label htmlFor="contactnumber">Contact Number</Label>
-          <Input
-            id="contactnumber"
-            placeholder=""
-            type="text"
-            value={contactnumber}
-            onChange={(e) => setContactnumber(e.target.value)}
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
-          <Label htmlFor="hostler">Cource</Label>
-          <Input
-            id="hostler"
-            placeholder=""
-            type="text"
-            value={cource}
-            onChange={(e) => setcource(e.target.value)}
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-8">
-          <Label htmlFor="hostler">Hostler or day scholar</Label>
-          <Input
-            id="hostler"
-            placeholder=""
-            type="text"
-            value={hostler}
-            onChange={(e) => setHostler(e.target.value)}
-          />
-        </LabelInputContainer>
+          <LabelInputContainer className="mb-8">
+            <Label htmlFor="contactnumber">Contact Number</Label>
+            <Input
+              id="contactnumber"
+              placeholder=""
+              type="text"
+              value={contactnumber}
+              onChange={(e) => setContactnumber(e.target.value)}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-8">
+            <Label htmlFor="hostler">Cource</Label>
+            <Input
+              id="hostler"
+              placeholder=""
+              type="text"
+              value={cource}
+              onChange={(e) => setcource(e.target.value)}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-8">
+            <Label htmlFor="hostler">Hostler or day scholar</Label>
+            <Input
+              id="hostler"
+              placeholder=""
+              type="text"
+              value={hostler}
+              onChange={(e) => setHostler(e.target.value)}
+            />
+          </LabelInputContainer>
 
-        <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-lg h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-          type="submit"
-          disabled={submitting}
-        >
-          {submitting ? "Submitting..." : "Submit →"}
-          <BottomGradient />
-        </button>
+          <button
+            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-lg h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            type="submit"
+            disabled={submitting}
+          >
+            {submitting ? "Submitting..." : "Submit →"}
+            <BottomGradient />
+          </button>
 
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-      </form>
-    </div>
-  );
+          <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+        </form>
+      </div>
+    );
+  }
 }
-
 const BottomGradient = () => {
   return (
     <>
