@@ -28,7 +28,7 @@ export function HeroScroll() {
         }
       >
         <video
-          src="https://xfdopvchbkvknriiippu.supabase.co/storage/v1/object/public/publicBucket/Untitled_design.mp4?t=2024-07-13T19%3A46%3A05.367Z"
+          src="/trailer.mp4"
           autoPlay
           loop
           playsInline

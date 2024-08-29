@@ -8,6 +8,8 @@ import { HeroHighlight } from "@/components/ui/hero-higlight";
 import Footer from "@/components/homepage/footer";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { Toaster } from "@/components/ui/toaster";
+import { Suspense } from "react";
+import Mainloder from "@/components/homepage/loader";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -36,17 +38,19 @@ export default function RootLayout({
         {/* Radial gradient for the container to give a faded look */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center bg-black text-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,white)]"></div> */}
 
-        <BackgroundBeamsWithCollision className="">
-          <div className="  fixed top-[-150px] z-[-2] h-[300px] left-[-170px] w-[300px] rounded-[500px] bg-primary blur-[200px] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-          <div className=" bgBlobs blur-3xl fixed top-[-150px] z-[-2] h-[300px] left-[-170px] w-[300px]  "></div>
-          <div className=" fixed  bottom-[-150px] z-[-2] h-[300px] right-[-170px] md:w-[300px] rounded-[500px] bg-primary blur-[200px] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-          <main className="min-h-screen flex flex-col items-center w-full ">
-            <Header />
-            {children}
-          </main>
-          <Footer />
-          {/* </div> */}
-        </BackgroundBeamsWithCollision>
+        <Suspense fallback={<Mainloder />}>
+          <BackgroundBeamsWithCollision className="">
+            <div className="  fixed top-[-150px] z-[-2] h-[300px] left-[-170px] w-[300px] rounded-[500px] bg-primary blur-[200px] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+            <div className=" bgBlobs blur-3xl fixed top-[-150px] z-[-2] h-[300px] left-[-170px] w-[300px]  "></div>
+            <div className=" fixed  bottom-[-150px] z-[-2] h-[300px] right-[-170px] md:w-[300px] rounded-[500px] bg-primary blur-[200px] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+            <main className="min-h-screen flex flex-col items-center w-full ">
+              <Header />
+              {children}
+            </main>
+            <Footer />
+            {/* </div> */}
+          </BackgroundBeamsWithCollision>
+        </Suspense>
         <Toaster />
       </body>
     </html>

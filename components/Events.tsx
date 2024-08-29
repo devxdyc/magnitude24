@@ -12,7 +12,7 @@ export async function Event({ category }: { category: any }) {
   console.log(events);
 
   return (
-    <div className="flex m-2 md:m-10 gap-[60px] flex-wrap flex-col md:flex-row ">
+    <div className="flex m-2 md:m-10 gap-[60px] flex-wrap justify-center flex-col md:flex-row ">
       {events &&
         events.map((e) => (
           <>
