@@ -5,8 +5,13 @@ import React from "react";
 async function page() {
   const supabase = createClient();
 
-  let { data: sponcers, error } = await supabase.from("sponsors").select("*");
-
+  const sponcers = [
+    {
+      logo_url: "/logo/coke.png",
+      name: "coke",
+      title: "",
+    },
+  ];
   console.log(sponcers);
   return (
     <div className="flex flex-col justify-center w-full ">
