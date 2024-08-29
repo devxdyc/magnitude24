@@ -8,14 +8,14 @@ export function TimelineMag() {
       title: "2023",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-xl font-normal mb-8">
             Last year, Magnitude 2023 took us on a thrilling journey with its
             electrifying Halloween theme. The event was a massive hit, leaving
             participants and spectators with memories of spooky costumes,
             creative decorations, and an atmosphere full of energy and
             excitement.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-xl font-normal mb-8">
             The sensational Sunidhi Chauhan and Rashmeet Kaur also treated us to
             an unforgettable concert, they brought the house down with their
             incredible performances. It was a night of vibrant vibes and pure
@@ -58,7 +58,7 @@ export function TimelineMag() {
       title: "2022",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-4">
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-xl font-normal mb-4">
             The 2022 edition of Magnitude was truly special, celebrating
             cultural diversity in the most vibrant way. The event brought
             together students from different backgrounds, showcasing their
@@ -119,15 +119,15 @@ export function TimelineMag() {
       ),
     },
     {
-      title: "2021",
+      title: "2020",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
-            Magnitude 2021 was a spectacle that kicked off with an incredible
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-xl font-normal mb-8">
+            Magnitude 2020 was a spectacle that kicked off with an incredible
             showcase of student talent. The campus came alive as students
             dazzled the audience with their performances.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-md md:text-xl font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-xl font-normal mb-8">
             The night was a sensory overload as the sensational Sunburn took
             over, transforming the campus into a pulsating dance floor. It was a
             celebration of music, creativity, and pure joy, turning the event

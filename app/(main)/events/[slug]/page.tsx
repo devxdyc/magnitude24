@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return (
       <div className="py-20">
         <div className="text-center mb-8 ">
-          <h1 className="text-4xl">
+          <h1 className="text-5xl text-center font-bold w-auto font-sans">
             {events && events[0].name && events[0].name}
           </h1>
         </div>
@@ -34,8 +34,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             alt={events[0].name}
             // layout="fill"
             width={800}
-            height={280}
+            height={180}
             objectFit="cover"
+            objectPosition="center"
             className="rounded-lg object-center shadow-lg bg-cover overflow-hidden"
           />
         </div>
@@ -65,6 +66,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </a>
             </div>
           </div>
+        </div>
+        <div className="md:w-[800px] p-4 bg-transparent rounded shadow-md">
+          {events[0].long_description}
         </div>
 
         <div
