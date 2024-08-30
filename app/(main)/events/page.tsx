@@ -2,6 +2,7 @@ import { Event } from "@/components/Events";
 import Header from "@/components/Header";
 import Mainloder from "@/components/homepage/loader";
 import { createClient } from "@/utils/supabase/server";
+import { data } from "autoprefixer";
 import { Suspense } from "react";
 
 export default async function Index() {

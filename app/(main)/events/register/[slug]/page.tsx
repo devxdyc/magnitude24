@@ -48,6 +48,10 @@ export default function RegistrationForm({
   const onSubmit = async (data: FormData) => {
     const { name, email, regnumber, contactnumber, hostler, cource } = data;
 
+    let { data: events, error: eventerror } = await supabase
+      .from("events")
+      .select("*")
+      .eq("id", params.slug);
     const { error } = await supabase
       .from("registration")
       .insert([
@@ -75,13 +79,74 @@ export default function RegistrationForm({
         to: email,
         name,
         subject: "Registration successful",
-        html: `<h1>Registration successful</h1><p>Thank you for registering for ${eventname}</p>`,
+        html: `<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0; padding: 20px 0;">
+        <tr>
+            <td align="center">
+                <table width="600px" cellpadding="0" cellspacing="0" border="0"
+                    style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+                    <tr>
+                        <td style="padding: 20px; background-color: #fc0505; text-align: center; color: #ffffff;">
+                            <h1 style="margin: 0; font-size: 28px;">Magnitude 2024</h1>
+                            <p style="margin: 5px 0 0;">Thank you for registering!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px;">
+                            <h2 style="font-size: 24px; margin-top: 0;">Hello ${name},</h2>
+                            <p style="font-size: 16px; line-height: 1.6;">
+                                We are thrilled to confirm your registration for <strong>Magnitude 2024</strong>! Get
+                                ready to be a part of an incredible experience filled with innovation, creativity, and
+                                excitement.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.6;">
+                                Here are the details of your registration:
+                            </p>
+                            <ul style="font-size: 16px; line-height: 1.6; padding-left: 20px; list-style-type: disc;">
+                                <li><strong>Event Name:</strong> ${eventname}</li>
+                                <li><strong>Date:</strong> ${
+                                  events && events[0].start_date
+                                }</li>
+                                <li><strong>Time:</strong> ${
+                                  events && events[0].start_time
+                                }</li>
+                                <li><strong>Location:</strong> ${
+                                  events && events[0].venue
+                                }</li>
+                            </ul>
+                            <p style="font-size: 16px; line-height: 1.6;">
+                                We look forward to seeing you at the event. If you have any questions, feel free to
+                                <a href="mailto:magnitude.dyc@gmail.com" style="color: #4CAF50; text-decoration: none;">contact us</a>.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.6;">
+                                Stay updated with the latest news and announcements by following us on
+                                <a href="https://www.facebook.com/share/ZTTRJrmEbawLHGjB/?mibextid=LQQJ4d" style="color: #4CAF50; text-decoration: none;">Facebook</a>,
+                                <a href="https://www.linkedin.com/company/youthvibelpu/" style="color: #4CAF50; text-decoration: none;">Linkedin</a>,
+                                and <a href="https://www.instagram.com/youthvibe.lpu?igsh=MXZqbWJhNnFyaXoyMw==" style="color: #4CAF50; text-decoration: none;">Instagram</a>.
+                            </p>
+                            <p style="font-size: 16px; line-height: 1.6;">
+                                See you at Magnitude 2024!
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; background-color: #f4f4f4; text-align: center;">
+                            <p style="font-size: 14px; color: #888;">
+                                &copy; 2024 Magnitude. All rights reserved.
+                            </p>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>`,
       });
 
       toast({
         title: "Success",
-        description: "Data inserted successfully",
+        description: "Registration Sucessfull",
       });
+      setSubmitted(true);
     }
   };
   if (submitted) {
@@ -90,6 +155,9 @@ export default function RegistrationForm({
         <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
           Registration successful
         </h2>
+        <a href="/">
+          <button>Return To Home</button>
+        </a>
       </div>
     );
   }

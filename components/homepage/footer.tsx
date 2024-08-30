@@ -40,7 +40,7 @@ function Footer() {
                 Lovely Professional University's Open InterUniversity Compition.
               </h1>
             </div>
-            <a>
+            <a href="/contact">
               <button className="bg-primary/90 p-2 rounded-xl font-semibold text-xl px-4 ">
                 Contact Us
               </button>

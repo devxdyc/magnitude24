@@ -12,7 +12,7 @@ function Hero() {
       >
         "Welcome to MAGNI
         <span className="text-primary font-semibold">TUDE 24</span>: The
-        Ultimate Cultural Showdown of Universities!"
+        Ultimate Cultural Showdown of LPU!"
       </motion.h1>
       <motion.video
         initial={{ opacity: 0, y: -100 }}

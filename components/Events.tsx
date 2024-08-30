@@ -9,7 +9,6 @@ export async function Event({ category }: { category: any }) {
     .from("events")
     .select("*")
     .eq("category", category.id);
-  console.log(events);
 
   return (
     <div className="flex m-2 md:m-10 gap-[60px] flex-wrap justify-center flex-col md:flex-row ">

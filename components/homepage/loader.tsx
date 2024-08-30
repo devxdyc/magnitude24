@@ -6,7 +6,7 @@ export default function Mainloder() {
       <div className="loader JS_on ">
         <span className="binary" />
         <span className="binary" />
-        <span className="getting-there">LOADING STUFF...</span>
+        <span className="getting-there">LOADING...</span>
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ export default function Events({ e }: { e: any }) {
         scale: 1.05,
         boxShadow: "0px 0px 100px 2px rgba(100,10,10,0.8)",
       }}
+      key={e.id}
     >
       <div
         className="felx m-2 gap-2  w-fit rounded-xl   shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg outline-none"
