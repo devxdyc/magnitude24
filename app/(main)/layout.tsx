@@ -419,7 +419,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"black-han-sans-regular "}>
+    <html lang="en" className={"permanent-marker-regular "}>
       <body className=" bg-black text-foreground">
         {/* <div className=" w-full bg-black text-white bg-dot-white/[0.2]  relative  "> */}
         {/* Radial gradient for the container to give a faded look */}

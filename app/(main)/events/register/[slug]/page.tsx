@@ -171,12 +171,7 @@ export default function RegistrationForm({
       <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
         <LabelInputContainer>
           <Label htmlFor="name">Name</Label>
-          <Input
-            id="name"
-            placeholder="Tyler"
-            type="text"
-            {...register("name")}
-          />
+          <Input id="name" placeholder="" type="text" {...register("name")} />
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -195,7 +190,7 @@ export default function RegistrationForm({
           <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
-            placeholder="projectmayhem@fc.com"
+            placeholder=""
             type="email"
             {...register("email")}
           />

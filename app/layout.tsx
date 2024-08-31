@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"black-han-sans-regular"}>
+    <html lang="en" className={"permanent-marker-regular"}>
       <body className=" bg-black text-foreground">
         {children}
         <Analytics />

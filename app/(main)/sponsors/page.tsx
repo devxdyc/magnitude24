@@ -11,6 +11,41 @@ async function page() {
       name: "coke",
       title: "",
     },
+    {
+      logo_url: "/logo/ccd.png",
+      name: "Café Coffee Day",
+      title: "",
+    },
+    {
+      logo_url: "/logo/ubon.jpg",
+      name: "UBON",
+      title: "",
+    },
+    {
+      logo_url: "/logo/amazoncom.png",
+      name: "Amazon",
+      title: "",
+    },
+    {
+      logo_url: "/logo/ktm.png",
+      name: "KTM",
+      title: "",
+    },
+    {
+      logo_url: "/logo/canon.png",
+      name: "Canon",
+      title: "",
+    },
+    {
+      logo_url: "/logo/ebay.png",
+      name: "Ebay",
+      title: "",
+    },
+    {
+      logo_url: "/logo/mtv.png",
+      name: "Mtv",
+      title: "",
+    },
   ];
   console.log(sponcers);
   return (
@@ -19,7 +54,10 @@ async function page() {
       <div className="flex flex-wrap gap-10 p-10 lg:px-64 align-middle justify-center">
         {sponcers &&
           sponcers.map((sponcers) => (
-            <div className="flex flex-col bg-muted rounded-xl p-3 items-center justify-center">
+            <div
+              key={sponcers.name}
+              className="flex flex-col bg-muted rounded-xl p-3 items-center justify-center"
+            >
               <Image
                 src={`${sponcers.logo_url}`}
                 width={200}
