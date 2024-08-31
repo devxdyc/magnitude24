@@ -399,7 +399,7 @@ const events = [
           <ul class="list-disc list-inside text-gray-700">
             <li>Participants must provide their own display materials and equipment.</li>
             <li>Presentations must be original and focus on the unique aspects of their startup.</li>
-            <li>No offensive or inappropriate content will be tolerated.</li>
+            <li>No offensive or inaregularppropriate content will be tolerated.</li>
             <li>The organizers may enforce changes as needed.</li>
           </ul>
         </div>
@@ -419,7 +419,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"permanent-marker-regular "}>
+    <html lang="en" className={"black-han-sans-regular"}>
       <body className=" bg-black text-foreground">
         {/* <div className=" w-full bg-black text-white bg-dot-white/[0.2]  relative  "> */}
         {/* Radial gradient for the container to give a faded look */}
