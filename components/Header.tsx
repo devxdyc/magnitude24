@@ -71,37 +71,37 @@ export default function Header() {
                 <HamburgerMenuIcon height={30} width={30} />
               </MenubarTrigger>
               <MenubarContent>
-                <MenubarItem>
+                <MenubarItem className="px-4 py-2">
                   <a href="/" rel="noreferrer">
                     <h2>Home</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
+                <MenubarItem className="px-4 py-2">
                   <a href="/about">
                     <h2>About</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
+                <MenubarItem className="px-4 py-2">
                   <a href="/events" rel="noreferrer">
                     <h2>Events</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
+                <MenubarItem className="px-4 py-2">
                   <a href="/schedule">
                     <h2>Schedule</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
-                  <a href="/sponcors">
-                    <h2>Sponcors</h2>
+                <MenubarItem className="px-4 py-2">
+                  <a href="/sponsors">
+                    <h2>Sponsors</h2>
                   </a>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
+                <MenubarItem className="px-4 py-2">
                   <a href="/contact">
                     <h2>contact</h2>
                   </a>
