@@ -89,11 +89,11 @@ async function page() {
           </div>
           <div className="flex gap-2">
             <PhoneCall />
-            <h3>9997776661</h3>
+            <h3>9608484663</h3>
           </div>
           <div className="flex gap-2">
             <Mail />
-            <h3>youthcapital@gmail.com</h3>
+            <h3>youthcapital24@gmail.com</h3>
           </div>
         </div>
       </div>

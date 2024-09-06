@@ -30,6 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={"black-han-sans-regular"}>
+      <head>
+        <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className=" bg-black text-foreground">
         {children}
         <Analytics />

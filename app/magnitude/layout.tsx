@@ -420,6 +420,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={"black-han-sans-regular"}>
+      <head>
+        <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className=" bg-black text-foreground">
         {/* <div className=" w-full bg-black text-white bg-dot-white/[0.2]  relative  "> */}
         {/* Radial gradient for the container to give a faded look */}

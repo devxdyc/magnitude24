@@ -7,7 +7,7 @@ export default function Events({ e }: { e: any }) {
   return (
     <motion.a
       className="rounded-xl overflow-hidden w-fit"
-      href={`/events/${e.id}`}
+      href={`/magnitude/events/${e.id}`}
       initial={{ scale: 0 }}
       animate={{ scale: 1, boxShadow: "0px 0px 50px 2px rgba(10,10,10,1)" }}
       transition={{ ease: "easeOut", duration: 0.5 }}

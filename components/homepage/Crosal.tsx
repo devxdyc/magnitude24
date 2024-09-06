@@ -48,13 +48,13 @@ const DummyContent = ({ event }: { event: any }) => {
         </p>
         <div className="flex justify-between m-2 p-10">
           <a
-            href={`/events/${event.id}`}
+            href={`/magnitude/events/${event.id}`}
             className="text-primary/60 text-base md:text-2xl font-sans"
           >
             Read More
           </a>
           <a
-            href={`/events/register/${event.id}`}
+            href={`/magnitude/events/register/${event.id}`}
             className="text-primary/60 text-base md:text-2xl font-sans"
           >
             Register

@@ -10,6 +10,8 @@ import { createClient } from "@/utils/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 import { useSearchParams } from "next/navigation";
 import sendMail from "@/lib/mail";
+import { FileUploadDemo } from "@/components/file";
+import Image from "next/image";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -24,11 +26,12 @@ const formSchema = z.object({
     .max(10, "Contact number must be 10 digits"),
   hostler: z.string().nonempty("Hostler or day scholar is required"),
   cource: z.string().nonempty("Course is required"),
+  transactionId: z.string().min(1, "Transaction ID is required"),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function RegistrationForm({
+export default async function RegistrationForm({
   params,
 }: {
   params: { slug: string };
@@ -45,15 +48,53 @@ export default function RegistrationForm({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: FormData) => {
-    const { name, email, regnumber, contactnumber, hostler, cource } = data;
+  const [files, setFiles] = React.useState<File[]>([]);
+  const [uploaded, setUploaded] = React.useState(false);
+  const [ssuploding, setSsuploding] = React.useState(false);
+  const handleFileUpload = async (files: File[]) => {
+    setSsuploding(true);
+    setFiles(files);
+    const { data, error } = await supabase.storage
+      .from("Payment")
+      .upload(`/ss/${+files[0].name}`, files[0]);
+    if (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "File upload failed",
+      });
+    } else {
+      setUploaded(true);
+      console.log(data);
+    }
+    setSsuploding(false);
+  };
 
-    let { data: events, error: eventerror } = await supabase
-      .from("events")
-      .select("*")
-      .eq("id", params.slug);
+  let { data: events, error: eventerror } = await supabase
+    .from("events")
+    .select("*")
+    .eq("id", params.slug);
+
+  const onSubmit = async (data: FormData) => {
+    const {
+      name,
+      email,
+      regnumber,
+      contactnumber,
+      hostler,
+      cource,
+      transactionId,
+    } = data;
+    if (!uploaded) {
+      toast({
+        title: "Error",
+        description: "Upload payment screenshot",
+      });
+      return;
+    }
+
     const { error } = await supabase
-      .from("registration")
+      .from("PaidRegistration")
       .insert([
         {
           event_id: params.slug,
@@ -64,6 +105,8 @@ export default function RegistrationForm({
           contact_number: contactnumber,
           hostler,
           cource,
+          transaction_id: transactionId,
+          image: files[0].name,
         },
       ])
       .select();
@@ -252,13 +295,38 @@ export default function RegistrationForm({
             <p className="text-red-500">{errors.hostler.message}</p>
           )}
         </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="qrCode">Pay {events && events[0].price} Rs.</Label>
+          <Image src="/qr.jpg" alt="qr" width={500} height={500} />
+        </LabelInputContainer>
+
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="transactionId">Transaction ID</Label>
+          <Input
+            id="transactionId"
+            placeholder=""
+            type="text"
+            {...register("transactionId")}
+          />
+          {errors.transactionId && (
+            <p className="text-red-500">{errors.transactionId.message}</p>
+          )}
+        </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
+          <Label htmlFor="image">Upload Screenshot</Label>
+          <FileUploadDemo handleFileUpload={handleFileUpload} />
+        </LabelInputContainer>
 
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-lg h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Submit →"}
+          {ssuploding
+            ? "Uploading image.."
+            : isSubmitting
+            ? "Submitting..."
+            : "Submit →"}
           <BottomGradient />
         </button>
 
