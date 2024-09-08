@@ -227,7 +227,7 @@ export default function PaidRegistrationForm({
       setSubmitted(true);
     }
   };
-  if (!submitted) {
+  if (submitted) {
     return (
       <div className="max-w-md w-full  flex flex-col gap-4 mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
         <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
