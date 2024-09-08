@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="md:w-[800px] md:h-[380px] m-4 overflow-hidden">
           <Image
-            src={events[0].banner_url && `${events[0].square_url}`}
+            src={"/Magnitude.png"}
             alt={events[0].name}
             // layout="fill"
             width={800}

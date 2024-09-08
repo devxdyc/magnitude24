@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"black-han-sans-regular"}>
+    <html lang="en" className={UrbanistF.className}>
       <head>
         <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
       </head>

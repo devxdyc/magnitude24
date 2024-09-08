@@ -10,7 +10,7 @@ export function AppleCardsCarouselDemo({ events }: { events: any }) {
     data.push({
       category: event.category_name,
       title: event.name,
-      src: event.banner_url,
+      src: event.square_url,
       content: <DummyContent event={event} />,
     });
   });
@@ -21,7 +21,7 @@ export function AppleCardsCarouselDemo({ events }: { events: any }) {
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
+      <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-primary/60 font-sans">
         Our Flagship Events
       </h2>
       <Carousel items={cards} />

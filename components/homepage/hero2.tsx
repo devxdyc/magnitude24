@@ -14,7 +14,7 @@ export function HeroScroll() {
             <h1 className="md:text-4xl text-2xl font-semibold text-white">
               Welcome to
             </h1>
-            <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+            <span className="text-4xl md:text-[6rem] font-extrabold mt-1 leading-none">
               {" "}
               MAGNI<span className="text-primary">TUDE 24</span>
               {/* <Image

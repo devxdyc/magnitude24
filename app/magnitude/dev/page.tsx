@@ -12,6 +12,7 @@ import { useSearchParams } from "next/navigation";
 import sendMail from "@/lib/mail";
 import { FileUploadDemo } from "@/components/file";
 import Image from "next/image";
+import { uploadToGooglDrive } from "@/utils/uploadToDrive";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -51,21 +52,23 @@ export default async function RegistrationForm({
   const [files, setFiles] = React.useState<File[]>([]);
   const [uploaded, setUploaded] = React.useState(false);
   const [ssuploding, setSsuploding] = React.useState(false);
+
   const handleFileUpload = async (files: File[]) => {
     setSsuploding(true);
     setFiles(files);
-    const { data, error } = await supabase.storage
-      .from("Payment")
-      .upload(`/ss/${+files[0].name}`, files[0]);
-    if (error) {
-      console.error(error);
+    // const { data, error } = await supabase.storage
+    //   .from("Payment")
+    //   .upload(`/ss/${+files[0].name}`, files[0]);
+
+    const { viewLink, success } = await uploadToGooglDrive(files[0]);
+    if (!success) {
       toast({
         title: "Error",
         description: "File upload failed",
       });
     } else {
       setUploaded(true);
-      console.log(data);
+      console.log(viewLink);
     }
     setSsuploding(false);
   };

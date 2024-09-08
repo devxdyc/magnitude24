@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Label } from "@/components/extras/label";
@@ -31,12 +31,14 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default async function PaidRegistrationForm({
+export default function PaidRegistrationForm({
   eventname,
   id,
+  price,
 }: {
   eventname: string;
   id: string;
+  price: number;
 }) {
   const { toast } = useToast();
   const [submitted, setSubmitted] = React.useState(false);
@@ -49,34 +51,62 @@ export default async function PaidRegistrationForm({
     resolver: zodResolver(formSchema),
   });
 
-  const [files, setFiles] = React.useState<File[]>([]);
+  // const [files, setFiles] = React.useState<File[]>([]);
   const [uploaded, setUploaded] = React.useState(false);
   const [ssuploding, setSsuploding] = React.useState(false);
+  const webViewLink = React.useRef<string | null>(null);
   const handleFileUpload = async (files: File[]) => {
+    if (!files[0]) {
+      return;
+    }
+    // console.log("uploading");
     setSsuploding(true);
-    setFiles(files);
-    const { data, error } = await supabase.storage
-      .from("Payment")
-      .upload(`/ss/${+files[0].name}`, files[0]);
-    if (error) {
-      console.error(error);
+    // setFiles(files);
+
+    // const { data, error } = await supabase.storage
+    //   .from("Payment")
+    //   .upload(`/ss/${+files[0].name}`, files[0]);
+
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("name", files[0].name);
+
+    // console.log(files[0]);
+    // console.log(formData);
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    // console.log(result);
+
+    if (!result.success) {
       toast({
         title: "Error",
         description: "File upload failed",
       });
     } else {
       setUploaded(true);
-      console.log(data);
+      // console.log(result.webViewLink);
+      webViewLink.current = result.webViewLink;
     }
+    // if (error) {
+    //   console.error(error);
+    //   toast({
+    //     title: "Error",
+    //     description: "File upload failed",
+    //   });
+    // } else {
+    //   setUploaded(true);
+    //   console.log(data);
+    // }
     setSsuploding(false);
   };
 
-  let { data: events, error: eventerror } = await supabase
-    .from("events")
-    .select("*")
-    .eq("id", id);
-
   const onSubmit = async (data: FormData) => {
+    // console.log(data);
     const {
       name,
       email,
@@ -86,10 +116,10 @@ export default async function PaidRegistrationForm({
       cource,
       transactionId,
     } = data;
-    if (!uploaded) {
+    if (!uploaded || !webViewLink.current) {
       toast({
         title: "Error",
-        description: "Upload payment screenshot",
+        description: "Upload payment screenshot correctly.",
       });
       return;
     }
@@ -107,7 +137,7 @@ export default async function PaidRegistrationForm({
           hostler,
           cource,
           transaction_id: transactionId,
-          image: files[0].name,
+          file_link: webViewLink.current,
         },
       ])
       .select();
@@ -119,6 +149,10 @@ export default async function PaidRegistrationForm({
         description: "Enter valid data",
       });
     } else {
+      let { data: events, error: eventerror } = await supabase
+        .from("events")
+        .select("*")
+        .eq("id", id);
       await sendMail({
         to: email,
         name,
@@ -193,15 +227,23 @@ export default async function PaidRegistrationForm({
       setSubmitted(true);
     }
   };
-  if (submitted) {
+  if (!submitted) {
     return (
-      <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
+      <div className="max-w-md w-full  flex flex-col gap-4 mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-primary shadow m-10 ">
         <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
           Registration successful
         </h2>
-        <a href="/">
-          <button>Return To Home</button>
-        </a>
+        <p className="text-lg text-neutral-600 dark:text-neutral-400">
+          Thank you for registering for {eventname}.
+        </p>
+
+        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+
+        <div className="flex flex-col justify-center align-middle items-center   w-full">
+          <button className="flex border w-fit  align-middle p-3 py-2 rounded hover:border-primary">
+            <a href="/">Return To Home</a>
+          </button>
+        </div>
       </div>
     );
   }
@@ -297,7 +339,7 @@ export default async function PaidRegistrationForm({
           )}
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="qrCode">Pay {events && events[0].price} Rs.</Label>
+          <Label htmlFor="qrCode">Pay {price} Rs.</Label>
           <Image src="/qr.jpg" alt="qr" width={500} height={500} />
         </LabelInputContainer>
 
@@ -321,10 +363,10 @@ export default async function PaidRegistrationForm({
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-lg h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || ssuploding}
         >
           {ssuploding
-            ? "Uploading image.."
+            ? "Uploading image...."
             : isSubmitting
             ? "Submitting..."
             : "Submit →"}

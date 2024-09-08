@@ -15,6 +15,8 @@ import { HeroScroll } from "@/components/homepage/hero2";
 import { LayoutPerformances } from "@/components/homepage/PastPerformances";
 import { AnimatedPin } from "@/components/homepage/links";
 import { CanvasRevealEffectDemo } from "@/components/homepage/fests";
+import { Suspense } from "react";
+import Mainloder from "@/components/homepage/loader";
 
 export default async function Index() {
   const supabase = createClient();
@@ -25,42 +27,44 @@ export default async function Index() {
     .eq("is_featured", true);
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-2 items-center mb-8  ">
-      <head>
-        <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
-      </head>
-      <div className="flex md:hidden">
-        <Hero />
-      </div>
+    <Suspense fallback={<Mainloder />}>
+      <div className="flex-1 w-full flex flex-col gap-2 items-center mb-8  ">
+        <head>
+          <link rel="shortcut icon" href="/favicon.ico" sizes="any" />
+        </head>
+        <div className="flex md:hidden">
+          <Hero />
+        </div>
 
-      <div className="hidden md:flex">
-        <HeroScroll />
-      </div>
-      {/* <SparklesPreview /> */}
-      {/* {EVENTS && <Slider events={EVENTS} />} */}
-      {EVENTS && <AppleCardsCarouselDemo events={EVENTS} />}
-      {/* <div className=" h-full py-20 ">
+        <div className="hidden md:flex">
+          <HeroScroll />
+        </div>
+        {/* <SparklesPreview /> */}
+        {/* {EVENTS && <Slider events={EVENTS} />} */}
+        {EVENTS && <AppleCardsCarouselDemo events={EVENTS} />}
+        {/* <div className=" h-full py-20 ">
         <h2 className="max-w-7xl pl-4 my-8 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
           Our Exclusive Fests
         </h2>
 
         <CanvasRevealEffectDemo />
       </div> */}
-      <div className="w-full h-full py-20">
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
-          Our Former Resplendent Galas
-        </h2>
+        <div className="w-full h-full py-20">
+          <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-primary/60 font-sans">
+            Our Former Resplendent Galas
+          </h2>
 
-        <LayoutPerformances />
-      </div>
-      <div className="w-full h-full py-20">
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-primary/60 font-sans">
-          Our Socials
-        </h2>
+          <LayoutPerformances />
+        </div>
+        <div className="w-full h-full py-20">
+          <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-primary/60 font-sans">
+            Our Socials
+          </h2>
 
-        <AnimatedPin />
+          <AnimatedPin />
+        </div>
+        {/* <Timeline /> */}
       </div>
-      {/* <Timeline /> */}
-    </div>
+    </Suspense>
   );
 }
