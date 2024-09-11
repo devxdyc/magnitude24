@@ -132,7 +132,7 @@ export function TimelineMag() {
             over, transforming the campus into a pulsating dance floor. It was a
             celebration of music, creativity, and pure joy, turning the event
             into a legendary experience that still echoes in our memories.
-            Magnitude 2021 wasn’t just an event; it was a phenomenon that will
+            Magnitude 2020 wasn’t just an event; it was a phenomenon that will
             be talked about for years to come.
           </p>
           <div className="grid grid-cols-2 gap-4">

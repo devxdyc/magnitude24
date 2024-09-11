@@ -37,7 +37,8 @@ function Footer() {
                 Magni<span className="text-primary">tude</span>
               </h1>
               <h1 className=" text-md md:text-lg ">
-                Lovely Professional University's Open InterUniversity Compition.
+                Lovely Professional University's Open InterUniversity
+                Competition.
               </h1>
             </div>
             <a href="/magnitude/contact">
@@ -51,17 +52,23 @@ function Footer() {
                   <InstagramLogoIcon className="w-8 h-8" />
                 </button>
               </a>
-              <a>
+              <a href="">
                 <button>
                   <TwitterLogoIcon className="w-8 h-8" />
                 </button>
               </a>
-              <a>
+              <a
+                href="https://www.linkedin.com/company/youthvibelpu/"
+                target="_blank"
+              >
                 <button>
                   <LinkedInLogoIcon className="w-8 h-8" />
                 </button>
               </a>
-              <a>
+              <a
+                href="https://www.facebook.com/share/ZTTRJrmEbawLHGjB/?mibextid=LQQJ4d"
+                target="_blank"
+              >
                 <button>
                   <FacebookIcon className="w-8 h-8" />
                 </button>

@@ -50,7 +50,7 @@ async function page() {
   console.log(sponcers);
   return (
     <div className="flex flex-col justify-center w-full ">
-      <h1 className="text-3xl my-7 text-center">Our Sponcers</h1>
+      <h1 className="text-3xl my-7 text-center">Our Sponcors</h1>
       <div className="flex flex-wrap gap-10 p-10 lg:px-64 align-middle justify-center">
         {sponcers &&
           sponcers.map((sponcers) => (

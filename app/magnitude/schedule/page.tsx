@@ -7,8 +7,8 @@ async function Page() {
 
   return (
     <div className="container mx-auto p-4 rounded-xl mt-6">
-      <div className="overflow-x-auto">
-        <table className="min-w-full  shadow-md rounded-xl border  overflow-hidden">
+      <div className="overflow-x-auto border rounded-xl border-gray-100 overflow-hidden ">
+        <table className="min-w-full  shadow-md rounded-xl border  overflow-hidden border-zinc-300">
           <thead className="bg-gray-900">
             <tr>
               <th className="py-3 px-6 text-left text-sm font-medium text-white uppercase tracking-wider">
@@ -20,7 +20,7 @@ async function Page() {
               <th className="py-3 px-6 text-left text-sm font-medium text-white uppercase tracking-wider">
                 Date
               </th>
-              <th className="py-3 px-6 text-left text-sm font-medium text-white uppercase tracking-wider">
+              <th className="py-3 px-6 text-left text-sm fonhjt-medium text-white uppercase tracking-wider">
                 Time
               </th>
               <th className="py-3 px-6 text-left text-sm font-medium text-white uppercase tracking-wider">
