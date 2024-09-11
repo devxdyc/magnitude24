@@ -39,7 +39,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           Our Journey So Far....
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-md md:text-base max-w-sm">
-          Looking at the Events that made us Who We Are.
+          Looking back at the Events that made us Who We Are.
         </p>
       </div>
 

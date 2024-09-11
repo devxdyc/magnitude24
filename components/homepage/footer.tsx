@@ -37,7 +37,7 @@ function Footer() {
                 Magni<span className="text-primary">tude</span>
               </h1>
               <h1 className=" text-md md:text-lg ">
-                Lovely Professional University's Open InterUniversity
+                Lovely Professional University's Open IntraUniversity
                 Competition.
               </h1>
             </div>
