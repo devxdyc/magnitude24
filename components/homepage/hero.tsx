@@ -21,6 +21,7 @@ function Hero() {
         autoPlay
         loop
         muted
+        playsInline
         className="w-[100%] z-10  object-cover blur-sm "
       />
     </motion.div>

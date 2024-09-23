@@ -35,10 +35,12 @@ export default function PaidRegistrationForm({
   eventname,
   id,
   price,
+  qr,
 }: {
   eventname: string;
   id: string;
   price: number;
+  qr: string;
 }) {
   const { toast } = useToast();
   const [submitted, setSubmitted] = React.useState(false);
@@ -340,7 +342,7 @@ export default function PaidRegistrationForm({
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="qrCode">Pay {price} Rs.</Label>
-          <Image src="/qr.jpg" alt="qr" width={500} height={500} />
+          <Image src={qr} alt="qr" width={500} height={500} />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">

@@ -113,7 +113,7 @@ export default function Header() {
       </div>
 
       {/* <div className="flex gap-4 rounded-lg overflow-hidden"> */}
-      <a href="/events" className="hidden md:block">
+      <a href="/magnitude/events" className="hidden md:block">
         <GetStartedButton text="Register Now" />
         {/* <Image src={"/image.png"} alt="dyc-logo" width={180} height={40} /> */}
       </a>

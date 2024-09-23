@@ -28,17 +28,19 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {events && events[0].name && events[0].name}
           </h1>
         </div>
-        <div className="md:w-[800px] md:h-[380px] m-4 overflow-hidden">
-          <Image
-            src={"/Magnitude.png"}
-            alt={events[0].name}
-            // layout="fill"
-            width={800}
-            height={180}
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-lg object-center shadow-lg bg-cover overflow-hidden"
-          />
+        <div className="md:w-[800px] md:h-[380px]  flex justify-center items-center">
+          <div className="md:w-[600px] md:h-[380px] h-[200px] m-4 overflow-hidden items-center">
+            <Image
+              src={"/magnitudenew.jpg"}
+              alt={events[0].name}
+              // layout="fill"
+              width={600}
+              height={280}
+              objectFit="cover"
+              objectPosition="center"
+              className="rounded-lg object-center shadow-lg bg-cover overflow-hidden"
+            />
+          </div>
         </div>
         <div className="bg-muted p-1 m-2 rounded-xl">
           <div className="flex w-[100%] justify-between p-2">
