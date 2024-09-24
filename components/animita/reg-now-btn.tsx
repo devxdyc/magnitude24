@@ -22,7 +22,7 @@ export default function GetStartedButton({
       >
         <span
           className={cn(
-            "text-black px-2 transition-colors duration-100 ease-in-out group-hover:text-primary "
+            "text-black px-2 text-xl  transition-colors duration-100 ease-in-out group-hover:text-primary "
           )}
         >
           {text}
