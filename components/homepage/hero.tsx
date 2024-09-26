@@ -5,17 +5,14 @@ import GetStartedButton from "../animita/reg-now-btn";
 function Hero() {
   return (
     <motion.div className="lg:w-[60%] p-5 h-[70vh] justify-center flex flex-col items-center mt-10">
-      
       <motion.a
         className=" w-full flex justify-center "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        
       >
         <button className="md:text-[15px] w-[80%]  z-1 p-3 px-4 rounded-2xl   m-4 mb-8 text-xl text-center border border-primary">
-
-      Register Now->
+          Register Now-&gt;
         </button>
       </motion.a>
       <motion.h1
@@ -27,8 +24,7 @@ function Hero() {
         Welcome to MAGNI
         <span className="text-primary font-semibold">TUDE 24</span>
       </motion.h1>
-      
-      
+
       <motion.video
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
