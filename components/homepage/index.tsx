@@ -28,7 +28,7 @@ export default function VideoPlayer({
     // Set video source based on screen size
     const updateVideoSrc = () => {
       if (window.innerWidth < 768) {
-        setVideoSrc("/loadingvideo.mp4");
+        setVideoSrc("/mobile.mp4");
       } else {
         setVideoSrc("/loadingvideo.mp4");
       }
