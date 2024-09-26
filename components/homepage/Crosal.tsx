@@ -37,7 +37,7 @@ const DummyContent = ({ event }: { event: any }) => {
         className="bg-background p-8 md:p-14 rounded-3xl mb-4"
       >
         <Image
-          src={"/magnitudenew.png"}
+          src={"/magnitudenew.jpg"}
           alt="banner"
           height="500"
           width="500"
