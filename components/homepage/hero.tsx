@@ -12,7 +12,7 @@ function Hero() {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <button className="md:text-[15px] w-[80%]  z-1 p-3 px-4 rounded-2xl   m-4 mb-8 text-xl text-center border border-primary">
-          Register Now-&gt;
+          Register Now
         </button>
       </motion.a>
       <motion.h1
