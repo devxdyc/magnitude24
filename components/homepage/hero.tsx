@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import GetStartedButton from "../animita/reg-now-btn";
+import { redirect } from "next/navigation";
 function Hero() {
   return (
     <motion.div className="lg:w-[60%] p-5 h-[70vh] justify-center flex flex-col items-center mt-10">
@@ -11,9 +12,11 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <button className="md:text-[15px] w-[80%]  z-1 p-3 px-4 rounded-2xl   m-4 mb-8 text-xl text-center border border-primary">
-          Register Now
-        </button>
+        <a href="/magnitude/events" className="w-full">
+          <button className="md:text-[15px] w-[80%]  z-1 p-3 px-4 rounded-2xl   m-4 mb-8 text-xl text-center border border-primary">
+            Register Now
+          </button>
+        </a>
       </motion.a>
       <motion.h1
         className="md:text-[35px] w-[80%] z-1   m-4 mb-8 text-3xl text-center "
