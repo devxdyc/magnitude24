@@ -12,7 +12,7 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <a href="/magnitude/events" className="w-full">
+        <a href="/magnitude/events" className="w-full flex justify-center">
           <button className="md:text-[15px] w-[80%]  z-1 p-3 px-4 rounded-2xl   m-4 mb-8 text-xl text-center border border-primary">
             Register Now
           </button>
