@@ -85,6 +85,7 @@ export default function PaidRegistrationForm({
     // console.log(result);
 
     if (!result.success) {
+      console.log(result);
       toast({
         title: "Error",
         description: "File upload failed",
