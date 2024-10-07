@@ -342,10 +342,13 @@ export default function PaidRegistrationForm({
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="qrCode">
-            Pay {price} Rs(Non Refundable)
+            Amount to be paid: Rs.{price}
             <br />
             <br />
-            <p>In case of team event only team leader should register.</p>
+            <p>
+              Note: In case of team events, only the leader of the leam shall
+              pay and register.
+            </p>
           </Label>
           <Image src={qr} alt="qr" width={500} height={500} />
         </LabelInputContainer>
