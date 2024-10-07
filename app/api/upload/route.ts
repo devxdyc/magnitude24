@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       private_key: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n") ?? "",
     },
   });
-  console.log("authinticated");
+  console.log("authinticated", auth);
 
   console.log("uploading to google drive");
   const uploadToGooglDrive = async () => {
@@ -37,6 +37,7 @@ export async function POST(request: Request) {
 
     const driveService = google.drive({ version: "v3", auth: auth });
 
+    console.log("driveservice", driveService);
     const response = await driveService.files.create({
       requestBody: fileMetadata,
       media: {
