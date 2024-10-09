@@ -12,6 +12,7 @@ import { useSearchParams } from "next/navigation";
 import sendMail from "@/lib/mail";
 import { FileUploadDemo } from "@/components/file";
 import Image from "next/image";
+import { Html } from "next/document";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -36,11 +37,13 @@ export default function PaidRegistrationForm({
   id,
   price,
   qr,
+  qrGuidelines,
 }: {
   eventname: string;
   id: string;
   price: number;
   qr: string;
+  qrGuidelines: string;
 }) {
   const { toast } = useToast();
   const [submitted, setSubmitted] = React.useState(false);
@@ -343,13 +346,14 @@ export default function PaidRegistrationForm({
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="qrCode">
-            Amount to be paid: Rs.{price}
+            {/* Amount to be paid: Rs.{price}
             <br />
             <br />
             <p>
               Note: In case of team events, only the leader of the leam shall
               pay and register.
-            </p>
+            </p> */}
+            <div dangerouslySetInnerHTML={{ __html: qrGuidelines }}></div>
           </Label>
           <Image src={qr} alt="qr" width={500} height={500} />
         </LabelInputContainer>

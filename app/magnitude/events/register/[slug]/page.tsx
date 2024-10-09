@@ -18,6 +18,7 @@ async function page({ params }: { params: { slug: string } }) {
           eventname={events && events[0].name}
           price={events && events[0].price}
           qr={(events && events[0].qr) || ""}
+          qrGuidelines={(events && events[0].qr_guidlines) || ""}
         />
       ) : (
         <RegistrationForm id={params.slug} />
