@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
 import Mainloder from "@/components/homepage/loader";
 import VideoPlayer from "@/components/homepage/index";
+import Marquee from "react-fast-marquee";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -49,6 +50,10 @@ export default function RootLayout({
           <div className=" bgBlobs blur-3xl fixed top-[-150px] z-[-2] h-[300px] left-[-170px] w-[300px]  "></div>
           <div className=" fixed  bottom-[-150px] z-[-2] h-[300px] right-[-170px] md:w-[300px] rounded-[500px] bg-primary blur-[200px] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
           <main className="min-h-screen flex flex-col items-center w-full ">
+            <Marquee className="bg-primary text-primary-foreground w-full p-3 font-xl font-semibold text-center">
+              The dates of Magnitude have been postponed.Updated dates will be
+              notified soon.
+            </Marquee>
             <Header />
             {children}
           </main>
